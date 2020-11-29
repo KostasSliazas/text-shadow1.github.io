@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    font: 16px/1.5em 'Sarpanch', Arial, Geneva, Tahoma, sans-serif;
+    color: #333;
+    background: #333
+}
+
+.center {
+    max-width: 300px;
+    margin: 24px auto;
+    background: #f7f7f7;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "head head head""but1 but2 but3""but4 hexc rand""txts txts txts";
+    border-radius: 4px;
+    overflow: hidden;
+    border: 10px solid #777;
+    box-sizing: border-box;
+    font-size: 0.75em;
+    gap: 2px;
+    text-transform: lowercase;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5)
+}
+
+.center h1:nth-child(1) {
+    grid-area: head;
+    text-align: center;
+    margin: 0;
+    color: #9b2566;
+    text-shadow: 1px 2px 2px #999, 0px 3px 3px #999;
+}
+
+.center div:nth-of-type(1) {
+    grid-area: but1
+}
+
+.center div:nth-of-type(2) {
+    grid-area: but2
+}
+
+.center div:nth-of-type(3) {
+    grid-area: but3
+}
+
+.center div:nth-of-type(4) {
+    grid-area: but4
+}
+
+.center div:nth-of-type(5) {
+    grid-area: hexc
+}
+
+.center div:nth-of-type(6) {
+    grid-area: rand;
+}
+
+.center div:nth-of-type(7) {
+    grid-area: txts;
+    background: #fff;
+    text-align: left
+}
+
+.center>div {
+    margin: auto;
+    display: block;
+    height: 100%;
+    text-align: center
+}
+
+#txtstring {
+    padding: 4px;
+}
+
+#hexcol {
+    height: 48px;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+}
+
+.arows {
+    position: relative;
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #ccc;
+    width: 60px;
+    height: 60px;
+    padding: 4px
+}
+
+.arows input {
+    height: 20px;
+}
+
+.arows:not(input) {
+    font-size: 0;
+}
+
+.darrow,
+.uarrow {
+    border-color: #555 transparent;
+    border-style: solid;
+    height: 0;
+    width: 0;
+    cursor: pointer
+}
+
+input,
+input[type=text] {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    font-family: inherit;
+    text-align: center
+}
+input[type=text]::-webkit-inner-spin-button {
+      -webkit-appearance:none;
+}
+input[type=text] {
+    -moz-appearance: textfield;
+    padding: 0;
+    display: block;
+    color: #333
+}
+
+.darrow {
+    border-width: 20px 30px 0
+}
+
+.uarrow {
+    border-width: 0 30px 20px
+}
+
+.colorsin {
+    width: 100%;
+    display: block;
+    height: 100%
+}
+
+input {
+    padding: 4px 0
+}
+
+@keyframes rotate1 {
+    0% {
+        transform: rotate(190deg) translateX(20px);
+        opacity: 1;
+
+    }
+
+    to {
+        transform: rotate(200deg) translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+
+    0% {
+
+        transform: rotate(40deg) translateX(-8px);
+        opacity: 1;
+
+    }
+
+    40% {
+
+        transform: rotate(38deg) translateY(12px);
+
+    }
+
+    to {
+
+        transform: rotate(45deg) translateY(0);
+        opacity: 1;
+
+    }
+}
+
+
+.pencil-input {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    border: 2px solid #aaa;
+    color: #777;
+    outline: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    line-height: 1;
+    display: block;
+    background: #ccc;
+    box-sizing: border-box;
+}
+
+.pencil-input:checked+label+.pencil {
+    animation: rotate 1s alternate;
+}
+
+.pencil-input:checked::after {
+    content: "v";
+    position: absolute;
+    width: 44px;
+    left: 0;
+    line-height: 44px;
+    top: 0;
+    background: #fff;
+    border: 1px solid #aaa;
+}
+
+.pencil-input:not(:checked)+label+.pencil {
+    animation: rotate1 .2s 6 alternate;
+}
+
+.pencil {
+    opacity: 0;
+    margin-top: -94px;
+    pointer-events: none;
+    display: block;
+}
+
+.pencil,
+.pencil::before {
+    width: 15px;
+    left: 44px;
+    top: 0;
+    position: relative
+}
+
+.pencil {
+    background: linear-gradient(to right, #ffda45 0%, #ffea99 21%, #c09a00 36%, #c8a000 69%, #4a3d00 77%, #4d4210 100%);
+    height: 48px;
+    border-radius: 8px;
+}
+
+.pencil::before {
+    content: "";
+    height: 20px;
+    display: block;
+    border-radius: 6px 6px 0 0;
+    top: -10px;
+    background: radial-gradient(circle at top, #f1b7b7 0, #856063 5px, #f36e77 8px, rgba(210, 98, 106, 0) 10px), repeating-radial-gradient(10px 2px, rgba(0, 0, 0, .2) 0 2px, rgba(121, 121, 121, 0) 2px 3px), linear-gradient(to right, #3b3b3b 0%, #aeaeae 21%, #fafafa 34%, #707070 55%, #2a2a2a 71%, #535353 92%, #5f5f5f 100%);
+    left: 0
+}
+
+.pencil::after {
+    content: "-";
+    width: 15px;
+    display: block;
+    left: 0;
+    font-size: 14px;
+    position: absolute;
+    top: 40px;
+    border-radius: 14px;
+    z-index: -1;
+    text-align: center;
+    color: transparent;
+    text-shadow: 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424;
+    background: radial-gradient(ellipse at top, #c19a6b 1px 2px, #7c6f6c 2px 3px, #c19a6b 3px 4px, #6b6862 4px 5px, rgba(0, 0, 0, 0) 6px);
+}

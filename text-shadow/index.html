@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>text-shadow</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sarpanch&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+  <div class="center">
+    <h1>text-shadow</h1>
+    <div>
+      <div class="arows">
+        <div class="uarrow"></div>
+        <input type="text" pattern="\d*" maxlength="2"  value="1" id="startp1">
+        <div class="darrow"></div>
+      </div>X axis
+    </div>
+    <div>
+      <div class="arows">
+        <div class="uarrow"></div>
+        <input type="text" pattern="\d*" maxlength="2" value="1" id="startp2">
+        <div class="darrow"></div>
+      </div>Y axis
+    </div>
+
+    <div>
+      <div class="arows">
+        <div class="uarrow"></div>
+        <input type="text" pattern="\d*" maxlength="1" value="0" id="startp3">
+        <div class="darrow"></div>
+      </div>BLUR
+    </div>
+
+    <div>
+      <div class="arows">
+        <div class="uarrow"></div>
+        <input type="text" value="1" pattern="\d*" maxlength="2" id="howfar">
+        <div class="darrow"></div>
+      </div>Number
+    </div>
+
+    <div class="colorsin"><input type="text" value="#aaa" placeholder="#000" id="hexcol">Valid color</div>
+    <div class="randomis">
+      <input type="checkbox" id="randomchek" class="pencil-input" checked>
+      <label for="randomchek">random</label>
+      <div class="pencil"></div>
+    </div>
+    <div><textarea rows="3" cols="30" id="txtstring"></textarea></div>
+  </div>
+
+  <script src="js/script.min.js"></script>
+</body>
+
+</html>
